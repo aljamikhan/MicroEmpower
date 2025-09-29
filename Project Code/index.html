@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>MicroEmpower - Home</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(120deg, #eaf0ff 0%, #f4f6fb 100%);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .bg-shapes {
+      position: absolute;
+      top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 0;
+    }
+    .bg-shapes svg {
+      width: 100vw; height: 100vh;
+      display: block;
+    }
+    /* Animated gradient glow shapes */
+    .glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(32px);
+      opacity: 0.18;
+      pointer-events: none;
+      z-index: 0;
+      animation: floatGlow 7s ease-in-out infinite alternate;
+    }
+    .glow1 {
+      width: 340px; height: 340px; left: -80px; top: 40px;
+      background: radial-gradient(circle, #6a8cff 0%, #2f6fed 80%);
+      animation-delay: 0s;
+    }
+    .glow2 {
+      width: 220px; height: 220px; right: -60px; bottom: 60px;
+      background: radial-gradient(circle, #2f6fed 0%, #6a8cff 80%);
+      animation-delay: 2s;
+    }
+    @keyframes floatGlow {
+      0% { transform: translateY(0) scale(1); }
+      100% { transform: translateY(30px) scale(1.08); }
+    }
+    .home-card {
+      position: relative;
+      z-index: 1;
+      background: rgba(255,255,255,0.90);
+      border-radius: 28px;
+      box-shadow: 0 12px 48px rgba(47,111,237,0.13), 0 1.5px 8px rgba(47,111,237,0.07);
+      padding: 44px 36px 36px 36px;
+      min-width: 320px;
+      max-width: 390px;
+      text-align: center;
+      backdrop-filter: blur(8px);
+      border: 1.5px solid #e3e9f7;
+    }
+    h2 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      margin: 0 0 22px 0;
+      background: linear-gradient(90deg, #2f6fed 0%, #6a8cff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 0.7px;
+      text-shadow: 0 2px 12px #6a8cff33;
+    }
+    .home-card p {
+      margin: 18px 0;
+    }
+    .home-card a {
+      display: block;
+      margin: 12px auto;
+      padding: 14px 0;
+      width: 92%;
+      font-size: 1.13rem;
+      font-weight: 600;
+      color: #fff;
+      background: linear-gradient(90deg, #2f6fed 0%, #6a8cff 100%);
+      border-radius: 12px;
+      text-decoration: none;
+      box-shadow: 0 2px 16px #6a8cff33, 0 1px 4px #2f6fed22;
+      transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+      border: none;
+      position: relative;
+      overflow: hidden;
+    }
+    .home-card a:after {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; width: 100%; height: 100%;
+      background: linear-gradient(120deg, #6a8cff44 0%, #2f6fed22 100%);
+      opacity: 0;
+      transition: opacity 0.2s;
+      z-index: 0;
+    }
+    .home-card a:hover {
+      background: linear-gradient(90deg, #6a8cff 0%, #2f6fed 100%);
+      transform: translateY(-2px) scale(1.04);
+      box-shadow: 0 8px 32px #6a8cff44, 0 2px 8px #2f6fed22;
+    }
+    .home-card a:hover:after {
+      opacity: 0.18;
+    }
+    .home-card hr {
+      border: none;
+      border-top: 1.5px solid #e3e9f7;
+      margin: 28px 0;
+    }
+    @media (max-width: 500px) {
+      .home-card { padding: 24px 8px; min-width: 0; max-width: 98vw; }
+      h2 { font-size: 1.5rem; }
+      .home-card a { font-size: 1.01rem; padding: 11px 0; }
+    }
+  </style>
+</head>
+  <body>
+  <!-- Custom Logo for microEmpower -->
+  <div style="position:absolute;top:32px;left:0;width:100vw;display:flex;justify-content:center;z-index:2;pointer-events:none;">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
+      <svg width="80" height="80" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="empowerGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#2f6fed"/>
+            <stop offset="100%" stop-color="#6a8cff"/>
+          </linearGradient>
+        </defs>
+        <circle cx="27" cy="27" r="24" stroke="url(#empowerGrad)" stroke-width="4" fill="none"/>
+        <polygon points="27,10 38,38 16,38" fill="url(#empowerGrad)" opacity="0.8"/>
+        <rect x="22" y="22" width="10" height="10" rx="3" fill="url(#empowerGrad)" opacity="0.7"/>
+      </svg>
+  <span style="font-family:'Segoe UI',Arial,sans-serif;font-size:2.9rem;font-weight:700;background:linear-gradient(90deg,#2f6fed 0%,#6a8cff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:2px;text-shadow:0 0 8px #6a8cff,0 0 18px #2f6fed,0 0 32px #6a8cff;">MicroEmpower</span>
+    </div>
+  </div>
+  <div class="bg-shapes">
+    <!-- Futuristic polygon and wave shapes -->
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none" style="position:absolute;top:0;left:0;width:100vw;height:100vh;">
+      <!-- Hollow polygonal shapes with gradient strokes -->
+      <polyline points="0,0 40,10 80,0 100,30 60,40 100,100 0,100 0,0" fill="none" stroke="url(#polygrad1)" stroke-width="2.5" opacity="0.18" />
+      <polyline points="100,0 80,20 60,10 40,30 0,20 0,0" fill="none" stroke="url(#polygrad2)" stroke-width="2" opacity="0.13" />
+      <!-- Futuristic wave lines -->
+      <path d="M0,80 Q25,70 50,85 T100,80" fill="none" stroke="url(#wavegrad1)" stroke-width="2.5" opacity="0.18"/>
+      <path d="M0,60 Q30,65 60,60 T100,65" fill="none" stroke="url(#wavegrad2)" stroke-width="2" opacity="0.13"/>
+      <defs>
+        <linearGradient id="polygrad1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#6a8cff"/>
+          <stop offset="100%" stop-color="#2f6fed"/>
+        </linearGradient>
+        <linearGradient id="polygrad2" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#2f6fed"/>
+          <stop offset="100%" stop-color="#6a8cff"/>
+        </linearGradient>
+        <linearGradient id="wavegrad1" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#6a8cff"/>
+          <stop offset="100%" stop-color="#2f6fed"/>
+        </linearGradient>
+        <linearGradient id="wavegrad2" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#2f6fed"/>
+          <stop offset="100%" stop-color="#6a8cff"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+  <div class="home-card">
+
+    <a href="customer_register.html">Register as Customer</a>
+    <a href="bank_register.html">Register as Bank Staff</a>
+    <hr>
+    <a href="login.html">Login</a>
+  </div>
+</body>
+</html>
